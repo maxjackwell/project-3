@@ -1,6 +1,4 @@
-
 // Documentation used for this 'https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-to-mongodb/'
-
 
 const { MongoClient } = require("mongodb");
 // Connection string for mongodb
