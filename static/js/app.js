@@ -1,11 +1,3 @@
-// import data from '../../Resources/clean_all_states.json' assert { type: 'json'};
-// console.log(data);
-// URL for samples.json data
-
-// fetch('../../Resources/clean_all_states.json')
-//     .then((response) => response.json())
-//     .then((json) => console.log(json));
-
 const url = 'https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json';
 
 const dataPromise = d3.json(url);
@@ -126,3 +118,19 @@ function optionChanged(new_id) {
 }
 
 init();
+
+
+
+
+
+//This is stuff if we need to pull from the .json file
+// Documentation: 'https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/'
+
+
+// import data from '../../Resources/clean_all_states.json' assert { type: 'json'};
+// console.log(data);
+// URL for samples.json data
+
+// fetch('../../Resources/clean_all_states.json')
+//     .then((response) => response.json())
+//     .then((json) => console.log(json));
