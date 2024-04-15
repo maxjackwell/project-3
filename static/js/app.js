@@ -1,7 +1,10 @@
-// URL for samples.json data
+// This is from the belly button challenge assignment
 const url = 'https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json';
-
 const dataPromise = d3.json(url);
+
+// This imports the data from the json file, unfortunately it doens't like the clean_all_states.json file
+const json_data = d3.json('../../Resources/all_states.json');
+
 
 // This populates the dropdown button and intializes the functions
 function init() {
@@ -9,6 +12,11 @@ function init() {
     let dropdownMenu = d3.select('#selDataset');
     // Call the optionChanged function when the dropdown value is changed
     d3.selectAll('#selDataset').on('change', optionChanged);
+
+    // Call the json data from the .json file
+    json_data.then((data) => {
+        console.log(data);
+    })
 
     dataPromise.then((data) => {
         // Return list of names
@@ -119,3 +127,19 @@ function optionChanged(new_id) {
 }
 
 init();
+
+
+
+
+
+//This is stuff if we need to pull from the .json file
+// Documentation: 'https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/'
+
+
+// import data from '../../Resources/clean_all_states.json' assert { type: 'json'};
+// console.log(data);
+// URL for samples.json data
+
+// fetch('../../Resources/clean_all_states.json')
+//     .then((response) => response.json())
+//     .then((json) => console.log(json));
