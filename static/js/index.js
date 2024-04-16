@@ -1,8 +1,10 @@
 // Documentation used for this 'https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-to-mongodb/'
 
+
 const { MongoClient } = require("mongodb");
 // Connection string for mongodb
 const uri = 'mongodb://localhost:27017/';
+// const uri = 'mongodb+srv://chern182:<0cwn6gpMnLEhdBbq>@cluster0.1odslqs.mongodb.net/'
 const client = new MongoClient(uri);
 async function run() {
   try {
@@ -17,4 +19,5 @@ async function run() {
     await client.close();
   }
 }
-run().catch(console.dir);
+run();
+// run().catch(console.dir);
