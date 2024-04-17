@@ -74,13 +74,13 @@ function displayCharts(id) {
     });
 }
 // Display the sample metadata
-function displayData(state) {
+function displayData(id) {
     // #sample-metadata is the html id for the text card 
     let displaySample = d3.select('#sample-metadata');
 
     json_data.then((data) => {
         // Return metadata for selected ID
-        let metaData = data.metadata.filter(result => result.state == state)[0];
+        let metaData = data.metadata.filter(result => result.id == id)[0];
 
         // Return the metaData as key-value pairs
         let entries = Object.entries(metaData);
