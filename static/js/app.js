@@ -132,5 +132,5 @@ function optionChanged(new_state) {
 
 }
 console.log('Go Team')
-//// Hey team how we doing today!!!
+console.log('Go Team')
 init();
