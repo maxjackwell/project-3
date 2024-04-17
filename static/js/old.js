@@ -81,7 +81,7 @@ function displayData(id) {
         // Return the metaData as key-value pairs
         let entries = Object.entries(metaData);
 
-        // Clear out the text from previous search
+        // Clear out the text from previous search //// find a new way to clear out a previious search
         displaySample.text('');
 
         // Populate the text for the selected ID using forEach() loop
