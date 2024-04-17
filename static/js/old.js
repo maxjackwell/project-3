@@ -1,7 +1,3 @@
-// This is from the belly button challenge assignment
-const url = 'https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json';
-const json_data = d3.json(url);
-
 // This imports the data from the json file, unfortunately it doens't like the clean_all_states.json file
 const json_data = d3.json('../../Resources/full_nba.json');
 
