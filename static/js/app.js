@@ -47,9 +47,9 @@ function init() {
 function displayData(state_abbrev) {
 
     // Clear the previous search results
-    displaySample.html('');
+    // displaySample.html('');
 
-    console.log('jackattack')
+    console.log('after clear search')
     console.log(state_abbrev)
 
 
@@ -119,11 +119,15 @@ function displayData(state_abbrev) {
 // Update page when a new id is selected
 function optionChanged(new_state) {
 
-    
-    
-    console.log(new_state);
-    console.log('Option changed')
-    displayData(new_state);
+
+    if (new_state instanceof Event) {
+
+    }
+    else{
+        displaySample.html('');
+
+        displayData(new_state);
+    }
 
 }
 
