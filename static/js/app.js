@@ -116,6 +116,7 @@ function displayData(state_abbrev) {
 
     });
 }
+
 // Update page when a new id is selected
 function optionChanged(new_state) {
 
@@ -130,4 +131,6 @@ function optionChanged(new_state) {
     }
 
 }
+console.log('Go Team')
+//// Hey team how we doing today!!!
 init();
