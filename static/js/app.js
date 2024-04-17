@@ -130,6 +130,4 @@ function optionChanged(new_state) {
     }
 
 }
-
-
 init();
