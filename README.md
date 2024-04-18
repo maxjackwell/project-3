@@ -43,3 +43,13 @@ In our investigation into the relationship between NBA players' birthplaces and 
 https://data36.com/scrape-multiple-web-pages-beautiful-soup-tutorial/
 https://stackoverflow.com/questions/39257147/convert-pandas-dataframe-to-json-format
 https://apidocs.geoapify.com/docs/places/#api
+https://getbootstrap.com/docs/4.1/utilities/sizing/
+https://www.geeksforgeeks.org/how-to-make-horizontal-scrollable-in-a-bootstrap-row/
+https://getbootstrap.com/docs/4.0/components/card/#border
+https://stackoverflow.com/questions/13188125/d3-add-multiple-classes-with-function
+https://codepen.io/your-work
+https://stackoverflow.com/questions/60426934/how-to-i-replace-null-with-0
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_formatting_small
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_styles_text-align
+https://getbootstrap.com/docs/4.1/content/tables/
+https://getbootstrap.com/docs/4.1/components/list-group/
