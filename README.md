@@ -1,4 +1,5 @@
 # NBA Player Birthplace Dashboard
+https://maxjackwell.github.io/project-3/
 
 ## Project Overview
 Concentrating on analyzing NBA player performance data and their admission to the league based on birthplace, this dashboard offers a user-friendly interface with a dropdown menu to sort players by state, revealing the top NBA talents from each region. Users can delve deeper into individual player profiles by clicking on their names in the table. Moreover, the dashboard features a separate table highlighting cities that have produced the most players. Complementing these features, a map visually displays the players' birthplaces.
