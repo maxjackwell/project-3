@@ -22,7 +22,7 @@ let displayCities = d3.select('#top-cities');
 let topTenChart = d3.select('#table');
 
 
-const json_data = d3.json('../../Resources/full_states_nba.json');
+const json_data = d3.json('https://maxjackwell.github.io/project-3/Resources/full_states_nba.json');
 
 
 // Call the json data from the .json file

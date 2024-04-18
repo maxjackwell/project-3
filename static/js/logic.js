@@ -1,4 +1,4 @@
-const json_mapdata = d3.json('../../Resources/full_states_nba.json');
+const json_mapdata = d3.json('https://maxjackwell.github.io/project-3/Resources/full_states_nba.json');
 function createMap(players){
     let map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
