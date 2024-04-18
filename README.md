@@ -16,11 +16,15 @@ Concentrating on analyzing NBA player performance data and their admission to th
 ### Instructions 
 - Identifying Relevant Data Sources: The initial phase involved thorough research to pinpoint data sources containing the necessary information for the project. Through meticulous investigation and evaluation, we identified the most suitable sources that aligned with the project requirements.
 - Data Scraping for Extraction: We systematically extracted pertinent information from the identified data sources by leveraging web scraping techniques. This involved automated scripts to navigate web pages, collect structured data, and store it for further processing.
-- ![scrapin](https://github.com/maxjackwell/project-3/assets/106487718/49dde1b3-9241-4786-81fd-8378e3ac204e)
+- ![scrapin](Resources/gifs/scrapin.gif)
 
 - Iterative Data Refinement: Upon acquiring the raw data, we engaged in an iterative process of refining and restructuring it to conform to the desired JSON format. This involved extensive manipulation and transformation of the data to ensure consistency, accuracy, and compatibility with the intended application.
 - Integration with MongoDB: We used MongoDB as the backend database solution to establish a robust data management system. Through seamless integration, we uploaded the refined data into MongoDB, where it was organized, indexed, and made ready for dynamic retrieval and modification.
+
+- ![mongodb](Resources/gifs/mongodb.gif)
 Dynamic Data Presentation with JavaScript: Leveraging the power of JavaScript, we crafted custom functions to dynamically retrieve and display the relevant data on the web page. By harnessing JavaScript's versatility and interactivity, we ensured that users could effortlessly access and interact with the latest information in real-time.
+
+- ![website](Resources/gifs/website.gif)
 Enhancing User Interface with Bootstrap: We incorporated Bootstrap, a leading front-end framework, to elevate the project's user experience and aesthetic appeal. We crafted a visually appealing and intuitively navigable dashboard by skillfully utilizing Bootstrap's pre-designed components and responsive layout utilities.
 
 #### Ethical Consideration
