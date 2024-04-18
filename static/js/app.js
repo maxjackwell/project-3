@@ -7,7 +7,9 @@ const states = [
     'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
 ];
 
-let state_data;
+let state_data, ten_list, header_list, stat_list;
+
+
 // #selDataset is html id for dropdown button
 let dropdownMenu = d3.select('#selDataset');
 
@@ -17,7 +19,7 @@ let displaySample = d3.select('#sample-metadata');
 
 let displayCities = d3.select('#top-cities');
 
-
+let topTenChart = d3.select('#table');
 
 
 const json_data = d3.json('../../Resources/full_states_nba.json');
@@ -45,6 +47,7 @@ function init() {
 
     displayData(state)
     topFiveCities(state)
+    topTenCharts(state)
 }
 // Display the sample metadata
 function displayData(state_abbrev) {
@@ -67,9 +70,6 @@ function displayData(state_abbrev) {
         }
         // Return metadata for selected ID
         
-
-
-
         let top_gp = state_data.sort((a, b) => d3.descending(a.gp, b.gp))[0];
         let top_pts = state_data.sort((a, b) => d3.descending(a.pts, b.pts))[0];
         let top_reb = state_data.sort((a,b)=> d3.descending(a.trb, b.trb))[0];
@@ -86,22 +86,6 @@ function displayData(state_abbrev) {
         let top_pf = state_data.sort((a, b) => d3.descending(a.pf, b.pf))[0];
         console.log(top_gp, top_pts, top_reb, top_assists, top_blocks,  top_stl, top_fg, top_fga, top_3p, top_3pa, top_ft, top_fta, top_to, top_pf);
 
-
-
-        // displaySample.append('ul')
-        //                 .text(`Games: ${top_gp.gp} ${top_gp.name} (${top_gp.city.replace('_',' ')})`);
-        // displaySample.append('ul')
-        //                 .text(`Points: ${top_pts.pts} ${top_pts.name} (${top_pts.city.replace('_',' ')})`);
-        // displaySample.append('ul')
-        //                 .text(`Blocks: ${top_blocks.blk} ${top_blocks.name} (${top_blocks.city.replace('_',' ')})`);
-        // displaySample.append('ul')
-        //                 .text(`Assists: ${top_assists.ast} ${top_assists.name} (${top_assists.city.replace('_',' ')})`);
-        // displaySample.append('ul')
-        //                 .text(`FG Makes: ${top_fg.fg} ${top_fg.name} (${top_fg.city.replace('_',' ')})`);
-        // displaySample.append('ul')
-        //                 .text(`FG Attempts: ${top_fga.fga} ${top_fga.name} (${top_fga.city.replace('_',' ')})`);
-        // displaySample.append('ul')
-        //                 .text(`Fouls: ${top_pf.pf} ${top_pf.name} (${top_pf.city.replace('_',' ')})`);
         displaySample.append('div').attr('id', 'div-to-remove').html(`
                 <ul class="list-group-item list-group-item-success"><em>Games</em>: <b>${top_gp.gp.toLocaleString()}<br><a href=${top_gp.url}>${top_gp.name}</a></b><br><small>(${top_gp.city.replace('_',' ')})</small></ul>
                 <ul class="list-group-item list-group-item-success"><em>Points</em>: <b>${top_pts.pts.toLocaleString()}<br><a href=${top_pts.url}>${top_pts.name}</a></b><br><small>(${top_pts.city.replace('_',' ')})</small></ul>
@@ -119,25 +103,64 @@ function displayData(state_abbrev) {
                 <ul class="list-group-item list-group-item-success"><em>Personal Fouls</em>: <b>${top_pf.pf.toLocaleString()}<br><a href=${top_pf.url}>${top_pf.name}</a></b><br><small>(${top_pf.city.replace('_',' ')})</small></ul>
                 
                 
-
-
-
-
-
-
-
-
-
-
-
-                
-
-                
         `);    
          console.log('displaysamplechangedpt2')
 
+
+
+
     });
 }
+
+
+
+// TOp 10 In each Stat per State
+function topTenCharts(state_abbrev) {
+
+    json_data.then((data) =>{
+        if (state_abbrev != 'ALL STATES') {
+            state_data = data.filter(result => result.state == state_abbrev);
+        console.log(state_data)
+        console.log('right before ten list problem')
+        }
+        else {
+            console.log('All states selected')
+            state_data = data;
+        }
+        let ten_gp = state_data.sort((a, b) => d3.descending(a.gp, b.gp)).slice(0,10);
+        let ten_pts = state_data.sort((a, b) => d3.descending(a.pts, b.pts)).slice(0,10);
+        let ten_reb = state_data.sort((a,b)=> d3.descending(a.trb, b.trb)).slice(0,10);
+        let ten_assists = state_data.sort((a, b) => d3.descending(a.ast, b.ast)).slice(0,10);
+        let ten_blocks = state_data.sort((a, b) => d3.descending(a.blk, b.blk)).slice(0,10);
+        let ten_stl = state_data.sort((a, b) => d3.descending(a.stl, b.stl)).slice(0,10);
+        let ten_fg = state_data.sort((a, b) => d3.descending(a.fg, b.fg)).slice(0,10);
+        let ten_fga = state_data.sort((a, b) => d3.descending(a.fga, b.fga)).slice(0,10);
+        let ten_3p = state_data.sort((a, b) => d3.descending(a.threep, b.threep)).slice(0,10);
+        let ten_3pa = state_data.sort((a, b) => d3.descending(a.threepa, b.threepa)).slice(0,10);
+        let ten_ft = state_data.sort((a, b) => d3.descending(a.ft, b.ft)).slice(0,10);
+        let ten_fta = state_data.sort((a, b) => d3.descending(a.fta, b.fta)).slice(0,10);
+        let ten_to = state_data.sort((a, b) => d3.descending(a.to, b.to)).slice(0,10);
+        let ten_pf = state_data.sort((a, b) => d3.descending(a.pf, b.pf)).slice(0,10);
+        console.log(ten_gp, ten_pts, ten_reb, ten_assists, ten_blocks,  ten_stl, ten_fg, ten_fga, ten_3p, ten_3pa, ten_ft, ten_fta, ten_to, ten_pf);
+        ten_list = [ten_gp, ten_pts, ten_reb, ten_assists, ten_blocks,  ten_stl, ten_fg, ten_fga, ten_3p, ten_3pa, ten_ft, ten_fta, ten_to, ten_pf]
+        header_list = ['Games Played', 'Points', 'Rebounds', 'Assists', 'Blocks', 'Steals', 'FG Made', 'FG Attempts', '3P Made', '3P Attempt', 'FT Made', 'FT Attempts', 'Turnovers', 'Personal Fouls']
+        stat_list = ['gp', 'pts', 'trb', 'ast', 'blk', 'stl', 'fg', 'fga', 'threep', 'threepa', 'ft', 'fta', 'to', 'pf']
+
+        for (i=0; i < ten_list.length; i++) {
+            topTenChart.append('div').text(header_list[i]).attr("class", "card mn-auto card bg-light mb-3").attr("id", `${stat_list[i]}-list`).attr("style", "width: 4%;")
+            let stats_list = d3.select(`#${stat_list[i]}-list`)
+            for (j=0; j < ten_list[i].length; j++) {
+
+                stats_list.append('a').text(`${j+1}. ${ten_list[i][j].name}: ${ten_list[i][j][stat_list[i]].toLocaleString()}`).attr("href", ten_list[i][j].url)
+
+                }
+
+            
+            };
+        });
+
+    }
+
 
 // in Init 
 // Top five cities
@@ -175,8 +198,10 @@ function optionChanged(new_state) {
     else{
         displaySample.html('');
         displayCities.html('');
+        topTenChart.html('');
         displayData(new_state);
         topFiveCities(new_state);
+        topTenCharts(new_state);
 
     }
 
